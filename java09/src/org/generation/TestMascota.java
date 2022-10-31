@@ -16,8 +16,16 @@ public class TestMascota {
 		
 		System.out.println("La mascota de Fer se llama: " + hilario.information() );
 		System.out.println("La mascota de Abe se llama: " + periquita.information());
+		
+		Mascota alf = new Mascota();
+		System.out.println("La casi mascota de Anahí es: " + alf.information());
+		
+		Mascota tommy = new Mascota("Tommy");
+		System.out.println("La mascota de Lalo es: " + tommy.information());
+		
 		System.out.println("No. de mascotas: " + Mascota.numeroMascotas());
 		
+
 	}
 
 }

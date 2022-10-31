@@ -13,34 +13,54 @@ public class Mascota {
 	
 	// El bloque de inicializacion de atributos se escribe entre llaves {}
 	{
+		this.nombre = "";
 		this.tipo = "No definido";
+		System.out.println("Se creó un objeto de tipo Mascota");
+		numMascotas++;
 	}
+	
 	// Los atributos de clase tienen su propio bloque de inicialización:
 	static {
 		numMascotas = 10;
 	}
 	
-	
-	//Métodos constructores
+	// ---- Métodos constructores ----------------------------------------/
 	// Si no especifico uno, Java genera el default (vacío)
 	// El nombre de un constructor debe tener el MISMO NOMBRE que la clase
-	// Los mètodos constructores no tienen retorno (return)
+	// Los métodos constructores no tienen retorno (return)
+	
+	/** Sobrecarga de métodos: cuando existe más de un método con el mismo nombre, 
+	 * pero tienen diferentes parámetros de entrada.
+	 *  */
+	
 	/** 
 	 * Inicializamos un objeto de la clase Mascota con el nombre indicado.
 	 * @param name nombre de la mascota (String)
+	 * @param edad edad en años
+	 * @parem tallaEnCm talla en centímetros
 	 */
 	Mascota(String name, double edad, int tallaEnCm){
-		this.nombre = name;
+		this(name);
 		this.edad = edad;
 		this.tallaEnCm = tallaEnCm;
-		// Este es el método default de la clase
-		System.out.println("Se creó un objeto de tipo Mascota");
-		numMascotas++;
+
 	}
-	
-	// Métodos de la clase
-	// - Métodos sobrecargados
-	// - Métodos sobreescritos
+   
+   /**
+    * Constructor para inicializar con nombre
+    * @param name nombre de la mascota
+    */
+   Mascota(String name){
+	   this.nombre = "suave " + name;
+   }
+ 
+   /**
+    * Constructor vacío
+    */
+   Mascota(){
+	   
+   }
+   
 	
 	 // Método de instancia
 	String information() {
@@ -50,7 +70,11 @@ public class Mascota {
 				
 	}
 	
-   static String numeroMascotas() {
+	// Método de clase, se declara con static
+	
+ static String numeroMascotas() {
 	return "N. Total mascotas creadas " + numMascotas;
-   }
+ }
+
+   //- Métodos sobreescritos
 }
